@@ -34,6 +34,7 @@ app.post('/answer', (req, res) => {
 });
 
 app.use('/posts', require('./controllers/postController'));
+app.use('/', require('./controllers/authController'));
 
 app.listen(port, () => {
     console.log(`Example app listening on port http://localhost:${port}`);
