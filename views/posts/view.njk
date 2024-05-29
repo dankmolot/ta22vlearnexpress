@@ -1,9 +1,14 @@
 {% extends 'partials/layout.njk' %}
 {% block title %}Posts{% endblock %}
+{% set fields = [["ID", "id"], 
+                ["Title", "title"], 
+                ["Content", "body"], 
+                ["Created At", "createdAt"], 
+                ["Updated At", "updatedAt"]]  %}
 {% block content %}
     <table class="table">
         <tbody>
-            {% for field in [["ID", "id"], ["Title", "title"], ["Content", "body"], ["Created At", "createdAt"], ["Updated At", "updatedAt"]] %}
+            {% for field in fields %}
                 <tr>
                     <th scope="row" style="width:5em">{{field[0]}}</th>
                     <td>{{post[field[1]]}}</td>
